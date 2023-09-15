@@ -1,11 +1,15 @@
 import React from "react";
 
-function Search() {
+function Search( { setSearchTerm } ) {
+
+    function handleChange(e) {
+        setSearchTerm(e.target.value)
+    }
 
     return (
         <div>
             <form>
-                <input placeholder = "search term" />
+                <input onChange = {(e) => handleChange(e)} placeholder = "search term" />
             </form>
         </div>
     )
